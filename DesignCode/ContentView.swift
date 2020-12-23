@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var show = false
+    
     var body: some View {
         ZStack {
             
@@ -20,21 +22,26 @@ struct ContentView: View {
             CardView()
                 .offset(x: 0, y: -40)
                 .scaleEffect(0.85)
-                .rotationEffect(Angle(degrees: 15))
-                .rotation3DEffect(Angle(degrees: 50), axis: (x: 10.0, y: 10.0, z: 10.0))
+                .rotationEffect(Angle(degrees: show ? 15 : 0))
+                .rotation3DEffect(Angle(degrees: show ? 50 : 0), axis: (x: 10.0, y: 10.0, z: 10.0))
                 .blendMode(.hardLight)
+                .animation(.spring())
             
             CardView()
                 .offset(x: 0, y: -20)
                 .scaleEffect(0.9)
-                .rotationEffect(Angle(degrees: 10))
-                .rotation3DEffect(Angle(degrees: 40), axis: (x: 10.0, y: 10.0, z: 10.0))
+                .rotationEffect(Angle(degrees: show ? 10 : 0))
+                .rotation3DEffect(Angle(degrees: show ? 40 : 0), axis: (x: 10.0, y: 10.0, z: 10.0))
                 .blendMode(.hardLight)
-            
+                .animation(.easeInOut)
             CertificateView()
                 .scaleEffect(0.95)
-                .rotationEffect(Angle(degrees: 5))
-                .rotation3DEffect(Angle(degrees: 30), axis: (x: 10.0, y: 10.0, z: 10.0))
+                .rotationEffect(Angle(degrees: show ? 5 : 0))
+                .rotation3DEffect(Angle(degrees: show ? 30 : 0), axis: (x: 10.0, y: 10.0, z: 10.0))
+                .animation(.spring())
+                .onTapGesture {
+                    self.show.toggle()
+                }
         }
     }
 }
