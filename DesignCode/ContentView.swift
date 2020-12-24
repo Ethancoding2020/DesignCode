@@ -14,31 +14,39 @@ struct ContentView: View {
         ZStack {
             
             TitleView()
-                .blur(radius: 20)
+                .blur(radius: show ? 20: 0)
+                .animation(.default)
             
             CardBottomView()
-                .blur(radius: 20)
+                .blur(radius: show ? 20 : 0)
+                .animation(.default)
             
             CardView()
-                .offset(x: 0, y: -40)
+                .background(Color.blue)
+                .cornerRadius(10)
+                .shadow(radius: 20)
+                .offset(x: 0, y: show ? -400 : -40)
                 .scaleEffect(0.85)
                 .rotationEffect(Angle(degrees: show ? 15 : 0))
-                .rotation3DEffect(Angle(degrees: show ? 50 : 0), axis: (x: 10.0, y: 10.0, z: 10.0))
+//                .rotation3DEffect(Angle(degrees: show ? 50 : 0), axis: (x: 10.0, y: 10.0, z: 10.0))
                 .blendMode(.hardLight)
                 .animation(.spring())
             
             CardView()
-                .offset(x: 0, y: -20)
+                .background(show ? Color.red : Color("background8"))
+                .cornerRadius(10)
+                .shadow(radius: 20)
+                .offset(x: 0, y: show ? -200 : -20)
                 .scaleEffect(0.9)
                 .rotationEffect(Angle(degrees: show ? 10 : 0))
-                .rotation3DEffect(Angle(degrees: show ? 40 : 0), axis: (x: 10.0, y: 10.0, z: 10.0))
+//                .rotation3DEffect(Angle(degrees: show ? 50 : 0), axis: (x: 10.0, y: 10.0, z: 10.0))
                 .blendMode(.hardLight)
                 .animation(.easeInOut)
                 
             CertificateView()
                 .scaleEffect(0.95)
                 .rotationEffect(Angle(degrees: show ? 5 : 0))
-                .rotation3DEffect(Angle(degrees: show ? 30 : 0), axis: (x: 10.0, y: 10.0, z: 10.0))
+//                .rotation3DEffect(Angle(degrees: show ? 40 : 0), axis: (x: 10.0, y: 10.0, z: 10.0))
                 .animation(.spring())
                 .onTapGesture {
                     self.show.toggle()
@@ -58,7 +66,6 @@ struct ContentView_Previews: PreviewProvider {
 struct CardView: View {
     var body: some View {
         VStack {
-            Text("Card Back")
         }
         .frame(width: 340, height: 220.0)
         .background(Color.blue)
@@ -87,12 +94,12 @@ struct CertificateView: View {
             }
             .padding(.horizontal)
             Spacer()
-            Image("Background")
+            Image("Certificate3")
         }
         .frame(width: 340.0, height: 220.0)
-        .background(Color.black)
-        .cornerRadius(10)
-        .shadow(radius: 20)
+        .foregroundColor(.black)
+        .shadow(radius: 0.4)
+        
     }
 }
 
@@ -118,7 +125,7 @@ struct CardBottomView: View {
                 .frame(width: 60, height: 6)
                 .cornerRadius(3.0)
                 .opacity(0.1)
-            Text("This certificate is proof that Ethan liang has achieved the UI Design course with approval from a Design+Code instructor.")
+            Text("This certificate is proof that Ethan liang has achieved the UI Design course with approval from a Design+Code instructor.").foregroundColor(.black)
                 .lineLimit(10)
             Spacer()
         }
