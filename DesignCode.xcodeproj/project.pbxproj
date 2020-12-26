@@ -13,6 +13,7 @@
 		AA66306A25924D690080E29B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA66306925924D690080E29B /* Assets.xcassets */; };
 		AA66306D25924D690080E29B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA66306C25924D690080E29B /* Preview Assets.xcassets */; };
 		AA66307925926CF20080E29B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA66307825926CF20080E29B /* LaunchScreen.storyboard */; };
+		AABCB1DB25952CE500D65C7A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABCB1DA25952CE500D65C7A /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		AA66306C25924D690080E29B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AA66307125924D690080E29B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA66307825926CF20080E29B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AABCB1DA25952CE500D65C7A /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				AA66306325924D650080E29B /* AppDelegate.swift */,
 				AA66306525924D650080E29B /* SceneDelegate.swift */,
 				AA66306725924D650080E29B /* ContentView.swift */,
+				AABCB1DA25952CE500D65C7A /* Home.swift */,
 				AA66306925924D690080E29B /* Assets.xcassets */,
 				AA66307825926CF20080E29B /* LaunchScreen.storyboard */,
 				AA66307125924D690080E29B /* Info.plist */,
@@ -147,6 +150,7 @@
 			files = (
 				AA66306425924D650080E29B /* AppDelegate.swift in Sources */,
 				AA66306625924D650080E29B /* SceneDelegate.swift in Sources */,
+				AABCB1DB25952CE500D65C7A /* Home.swift in Sources */,
 				AA66306825924D650080E29B /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
